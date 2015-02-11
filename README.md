@@ -10,6 +10,8 @@ A indie game based on post WWII submarine simulation. Basically Silent Hunter 6,
 -Started a GitHub repo to allow volunteers/partners to share, discuss, and add to the project.
 -Most of the basic stuff in Unity is ready to refine. Modelling, animation & characters are current concerns. Especially modelling the attack and control compartment to a decent level so that a very early alpha can be released.
 -Looking for partners (see below)
+-If someone lives in Groton CT. The one thing I have budgeted for is for measurments, photos and drawings of the free admission museum ship. One Crystal Lake Road
+Groton, Connecticut 06340 
 
 # "I want to help!"
 We are a small team that consists of myself (Modelling, animation, sound, code (C#, JS and C++), graphic design (Photoshop, GIMP, Mari, Krita, Corel Painter), research (e-mail contact with Navy veterans of the era + the internet. On hand but not directly associated with the project is a coder (C++), 2 graphic designers (Photoshop and other Adobe programs), and a sound artist. 
@@ -83,3 +85,6 @@ While desigining, this game will be completely open-source (except anything that
 
 3) What software is being used?
 I use Unity, Blender, Maya, 3ds Max, Photoshop, GIMP, Krita, Mari, Corel Painter, ManicTime, MakeHuman, zBrush 4R7, ShaderMap, NDo2, Realflow, Audacity, Audition, Camtasia Studio, Visual Studio 2013, Notepad++, and a bunch more. For the most part, Blender, Unity and Photoshop take up 95% of my time. 
+
+4) Can I use your resources for my own project?
+Everything except blueprints or layouts, those are property of the US Navy or General Electric under heavy license and some files or folders will mention if they require a differnt license.
