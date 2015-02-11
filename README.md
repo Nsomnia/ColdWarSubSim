@@ -1,5 +1,9 @@
 # ColdWarSubSim
-A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unity is the game engine, code is mostly C# with some JavaScript and possible moving to C++ and Unreal4 in the future. 
+A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unity is the game engine, code is mostly C# with some JavaScript and possibly moving to C++ and Unreal4 in the future. 
+
+# FOR ANYONE WANTING TO HELP
+Check out all the reference pictures and the virtual tour at http://www.ussnautilus.org/virtualTour/index.shtml# to see if anything looks like something you'd like to model. 
+Then please contact me at info@blendertek.com to discuss more. I don't commit changes to the models daily to the repo, so the .blends may not be 100% up to date. 
 
 # Basic Goals
 1. Create a video game using the Unity game engine similar to the Silent Hunter series but based on the cold war, since World War 2 has been done over, and over again. The last cold war submarine simulator was back in the late 90s.
@@ -7,14 +11,21 @@ A indie game based on post WWII submarine simulation. Basically Silent Hunter 6,
 3. Create a business model once the game is ready to submit to Steam.
 
 # Current Status (Feb 10, 2015)
--Started a GitHub repo to allow volunteers/partners to share, discuss, and add to the project.
--Most of the basic stuff in Unity is ready to refine. Modelling, animation & characters are current concerns. Especially modelling the attack and control compartment to a decent level so that a very early alpha can be released.
--Looking for partners (see below)
--If someone lives in Groton CT. The one thing I have budgeted for is for measurments, photos and drawings of the free admission museum ship. One Crystal Lake Road
+1. Started a GitHub repo to allow volunteers/partners to share, discuss, and add to the project.
+2. Most of the basic stuff in Unity is ready to refine. Modelling, animation & characters are current concerns.
+2a. Especially modelling the attack and control compartment to a decent level so that a very early alpha can be released.
+3.Looking for partners (see below)
+4. If someone lives in Groton CT. The one thing I have budgeted for is for measurements, photos and drawings of the free admission museum ship.
+One Crystal Lake Road 
 Groton, Connecticut 06340 
 
 # "I want to help!"
-We are a small team that consists of myself (Modelling, animation, sound, code (C#, JS and C++), graphic design (Photoshop, GIMP, Mari, Krita, Corel Painter), research (e-mail contact with Navy veterans of the era + the internet. On hand but not directly associated with the project is a coder (C++), 2 graphic designers (Photoshop and other Adobe programs), and a sound artist. 
+We are a small team that consists of...
+
+1. Nsomnia - myself (Modelling, animation, sound, code, graphic design, research)
+2. On hand but not directly associated with the project is a coder (C++), 2 graphic designers (Photoshop and other Adobe programs), and a sound artist. 
+3. Navy correspondents for accuracy and realism on an unpaid basis at this point
+3. Future Partners
 
 Our current budget is near nil. Will be updated soon as the project has JUST gotten underway less than two weeks ago. We have potential small backing from a local business.
 
@@ -34,6 +45,8 @@ If you have a desire to work on this project as a job, your in the wrong place. 
 3) Partnership: if you'd like to add work with the idea of a cut of future sales (see "I want to help" section five (5) above) then again a contract will have to be negotiated and signed. No guarantee this game will ever make it into the sales stage. 
 
 Most likely for any paid team member, I will supply a copy of ManicTime or a similar time tracking software. 
+
+Check out all the reference pictures and the virtual tour at http://www.ussnautilus.org/virtualTour/index.shtml# to see if anything looks like something you'd like to model. 
 
 # So whats this game exactly?
 At the time of writing (Feb 10, 2015) the current game overview is this.
