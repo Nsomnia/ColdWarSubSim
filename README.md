@@ -1,22 +1,25 @@
 # ColdWarSubSim
-A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unity is the game engine, code is mostly C# with some JavaScript and possibly moving to C++ and Unreal4 in the future. 
+A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unity is the game engine, code is mostly C# with some JavaScript and <i>possibly</i> moving to C++ and Unreal-Engine 4 in the future, as I own a copy.
 
 # FOR ANYONE WANTING TO HELP
-Check out all the reference pictures and the virtual tour at http://www.ussnautilus.org/virtualTour/index.shtml# to see if anything looks like something you'd like to model. 
-Then please contact me at info@blendertek.com to discuss more. I don't commit changes to the models daily to the repo, so the .blends may not be 100% up to date. 
+Check out all the <b>reference</b> pictures and the <b>virtual tour</b> at http://www.ussnautilus.org/virtualTour/index.shtml# to see if anything looks like something you'd like to model. 
+Then please <b>contact me at info@blendertek.com</b> to discuss more. <i>I don't commit changes to the models daily to the repo, so the .blends may up to a week behind.</i>
 
 # Basic Goals
-1. Create a video game using the Unity game engine similar to the Silent Hunter series but based on the cold war, since World War 2 has been done over, and over again. The last cold war submarine simulator was back in the late 90s.
-2. Allow anyone and anybody who has an interest in submarines, Unity, Blender and particularly a combination to add what they see would be a benefit to the game.
-3. Create a business model once the game is ready to submit to Steam.
+1. Create a video game using the Unity game engine similar to the Silent Hunter series but based on the cold war, since World War 2 has been done over, and over again. More or less <b>emulate and update Silent Hunter 5 only post-WWII</b>.
+2. Allow <i>anyone and anybody</i> who has an interest in <i>submarines, Unity, Blender and particularly a combination</i> to add what they see would be a <b>benefit to the game</b>.
+3. Polish, polish polish.
+4. Create a business model for <b>early access sales.</b>
+5. Repeat steps 3 & 4 for <b>Steam greenlight</b> or self-publishing.
 
 # Current Status (Feb 10, 2015)
-1. Started a GitHub repo to allow volunteers/partners to share, discuss, and add to the project.
-2. Most of the basic stuff in Unity is ready to refine. Modelling, animation & characters are current concerns.
-2a. Especially modelling the attack and control compartment to a decent level so that a very early alpha can be released.
-3.Looking for partners (see below)
-4. If someone lives in Groton CT. The one thing I have budgeted for is for measurements, photos and drawings of the free admission museum ship.
-One Crystal Lake Road 
+- Started a GitHub repo to allow volunteers/partners to share, discuss, and add to the project. The project was initally realized about January 10th, 2015 and a similar game was being worked on as a hobby by myself since early-to-mid 2014, thus I have some code already available and ready to adapt.
+- Posted all reference files and current .blends and test Unity projects including some Windows .exe builds
+- Most of the basic stuff in Unity is ready to refine. Modelling, animation & characters are current concerns.
+- Especially modelling the attack and control compartment to a decent level so that a very early alpha can be released.
+- Looking for partners (see below)
+- If someone lives in Groton CT. The one thing I have budgeted for is for measurements, photos and drawings of the free admission museum ship.
+One Crystal Lake Road
 Groton, Connecticut 06340 
 
 # "I want to help!"
@@ -30,19 +33,21 @@ We are a small team that consists of...
 Our current budget is near nil. Will be updated soon as the project has JUST gotten underway less than two weeks ago. We have potential small backing from a local business.
 
 However currently as of Feb 10, 2015 all work is done in one (1) of five (5) ways. 
-1) I scratch your back, you scratch mine: Anyone who can add in any noticeable way will have my full support in their current or future needs with any of my skills listed above.
-2) Pure voluntary: For those who love the idea of open-source and freedom of knowledge plus a love of indie video games, submarines, Navies, cold war, 3D modelling, animating, Unity or a combination of these. 
-3) Portfolio and Resume Building: Any work you put any noticable effort into can be included in your personal resume, portfolio, demo reel etc. your free to use our models in any of your future work as long as any projects started using them credit this original project here, we follow the GNU GPL v2 license.
-4) Small payments. Any work done (See section "Paid Work" below) can be discussed beforehand on a small payment to be made via paypal in 30-60 days once the alpha is out. I'm not talking about 80$ an hour freelance work, at least not at this point, if I wanted a freelancer I would get one from an actual freelance website where the job can be bid upon however if you absolutly require payment for your work, it can be discussed however be forewarned this may omit you from the project. I'd rather spend longer creating this project than paying what little profit I make working from home.
-5) A cut of potential future game sales. Any work done (See section "Paid Work" below) can be discussed for a cut of either early access sales, release sales, steam release sales, or a combination.
+- 1. I scratch your back, you scratch mine: Anyone who can add in any noticeable way will have my full support in their current or future needs with any of my skills listed above.
+- 2. Pure voluntary: For those who love the idea of open-source and freedom of knowledge plus a love of indie video games, submarines, Navies, cold war, 3D modelling, animating, Unity or a combination of these. 
+- 3. Portfolio and Resume Building: Any work you put any noticable effort into can be included in your personal resume, portfolio, demo reel etc. your free to use our models in any of your future work as long as any projects started using them credit this original project here, we follow the GNU GPL v2 license.
+- 4. Small payments. Any work done (See section "Paid Work" below) can be discussed beforehand on a small payment to be made via paypal in 30-60 days once the alpha is out. I'm not talking about 80$ an hour freelance work, at least not at this point, if I wanted a freelancer I would get one from an actual freelance website where the job can be bid upon however if you absolutly require payment for your work, it can be discussed however be forewarned this may omit you from the project. I'd rather spend longer creating this project than paying what little profit I make working from home.
+- 5. A cut of potential future game sales. Any work done (See section "Paid Work" below) can be discussed for a cut of either early access sales, release sales, steam release sales, or a combination.
 
 No matter what, if you want to work on this project in even the smallest ways you will get the oppertunity to have your name/username/or anonymous in the credits and documentation and website to show off you worked on an indie game.
 
+It must be said this is as indie is as indie comes currently but has the potential for bigger indie success.
+
 # Paid Work (I want to help, but not for free)
 If you have a desire to work on this project as a job, your in the wrong place. If you have a desire to work on this project but require some kind of monetary reward read this basic outline:
-1) Everything will have to be discussed beforehand, if you commit a model you worked 50 hours on and say "There you go, that'll be 750$ at my rate please" your work is going to be deleted. A virtual contract will be signed for any paid work in other words.
-2) Our budget will increase with time. If you require payment ahead of time ASAP, your probably in the wrong place. 
-3) Partnership: if you'd like to add work with the idea of a cut of future sales (see "I want to help" section five (5) above) then again a contract will have to be negotiated and signed. No guarantee this game will ever make it into the sales stage. 
+- 1) Everything will have to be discussed beforehand, if you commit a model you worked 50 hours on and say "There you go, that'll be 750$ at my rate please" your work is going to be deleted. A virtual contract will be signed for any paid work in other words.
+- 2) Our budget will increase with time which will lead to future payments as the budget increases. If you require payment ahead of time ASAP, your probably in the wrong place. 
+- 3) Partnership: if you'd like to add work with the idea of a cut of future sales (see "I want to help" section five (5) above) then again a contract will have to be negotiated and signed. No guarantee this game will ever make it into the sales stage. 
 
 Most likely for any paid team member, I will supply a copy of ManicTime or a similar time tracking software. 
 
@@ -75,9 +80,9 @@ Still in the planning stages. More ideas welcomed/coming.
 # How hardcore of a simulation will this be?
 
 At first we hope to keep it fairly arcade like to appeal to the most customers possible. However if time permits, and definitly eventually, we hope to have various difficulty levels ie.
-Landlubber: Torpedos hit where you aim for in the periscope, ballast and trim water tanks are handled automatically, all you have to do is drive, upgrade, and attack. Your crew stays happy forever.
-and various level all the way up to
-Subnut: You are nuts about submarines! You have to make mental calculations and use a stopwatch, you have to control nearly every aspect of your boat or else you may face the depths of the ocean (reactor core temperature, equipment breakdowns, realistic reloading speeds, crew moral if your patrol lasts too long.
+- Landlubber: Torpedos hit where you aim for in the periscope, ballast and trim water tanks are handled automatically, all you have to do is drive, upgrade, and attack. Your crew stays happy forever. Good for people who just want to point and shoot
+- and various levels all the way up to
+- Subnut: You are nuts about submarines! You have to make mental calculations and use a stopwatch, you have to control nearly every aspect of your boat or else you may face the depths of the ocean (reactor core temperature, equipment breakdowns, realistic reloading speeds, crew moral if your patrol lasts too long) only for die-hards
 
 
 Eventually I plan to calculate everything from thermal layers (differnt water temperature layers that sound reflect off in the ocean), air velocity when blowing ballast/trim/negative tanks, to how often your crew showers and goes to the bathroom and uses up fresh water.
@@ -101,3 +106,21 @@ I use Unity, Blender, Maya, 3ds Max, Photoshop, GIMP, Krita, Mari, Corel Painter
 
 4) Can I use your resources for my own project?
 Everything except blueprints or layouts, those are property of the US Navy or General Electric under heavy license and some files or folders will mention if they require a differnt license.
+
+5) How can I/we be sure a budget will be added
+While one can never be completely sure that a game will succeed, there is a <b>gap in the market for submarine simulators<b/>. Ubisoft was releasing them during the 2000's every couple years but then stopped and went the browser based free2play with pay2play meathod. This ruined the series for them. The last release was Silent Hunter 5 in 2010. Silent Hunter Online is their browser based version and frankly... it sucks. 
+This gap is <b>Cold War Submarine Simulators</b> the last one released was in the mid 90's and it saw commercial success. 
+
+Thus <b>we have a market.</b> Most people who played and enjoyed Silent Hunter have been waiting and hoping with fingers crossed that UbiSoft will release a new game. The havn't and the general consensious is they wont.
+
+<b>Open-source and Unity-made games are hot</>b right now. We fully intent to incorporate the ability to mod the game similar to Kerbal Space Program, Euro Truck Simulator 2, Farming Simulator 13/15 and other simulators of the like. Most likely with a python or lua interpretor. 
+
+<b>A local business has expressed intrest</b> in purchasing a small percent of a game once some real results are seen. At that point we can have paid team-members or else hire freelancers.
+
+<b>Crowdfunding/Kickstarter</b> while I dont think Kickstarter is the best way to get a game going it is a possability. 
+
+<b>Buying assets isn't needed</b> I can either code whats needed or I already own an asset that will work for whats required, I have a VAST library of assets I've purchased over the years when I was a hobbyist game designer.
+
+# Current Version & Changelog
+
+Currently version 0. Still planning and modelling/texturing to get to the point where we can start bringing everything into Unity, using some old code, writing some new, using my vast collection of assets and go from there.
