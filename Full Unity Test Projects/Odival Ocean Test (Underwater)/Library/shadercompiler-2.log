@@ -1,0 +1,36 @@
+Base path: E:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-2-748
+Cmd: getPlatforms
+Cmd: compileSnippet
+  api=8 type=0 insize=2296 outsize=5160 kw= ok=1
+Cmd: compileSnippet
+  api=8 type=1 insize=2296 outsize=4924 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3957 outsize=1465 kw= ok=1
+Cmd: compileSnippet
+  error: 2 plat 8 at (97): 'frag': input parameter 'i' missing semantics
+  api=8 type=1 insize=3957 outsize=0 kw= ok=0
+Cmd: compileSnippet
+  error: 2 plat 8 at (52): 'vert': function return value missing semantics
+  error: 1 plat 8 at (119): implicit truncation of vector type
+  api=8 type=0 insize=3091 outsize=0 kw= ok=0
+Cmd: compileSnippet
+  error: 2 plat 8 at (93): 'frag': input parameter 'i' missing semantics
+  error: 1 plat 8 at (119): implicit truncation of vector type
+  api=8 type=1 insize=3091 outsize=0 kw= ok=0
+Cmd: compileSnippet
+  error: 2 plat 8 at (47): incorrect number of arguments to numeric-type constructor
+  api=8 type=0 insize=962 outsize=0 kw= ok=0
+Cmd: compileSnippet
+  error: 2 plat 8 at (47): incorrect number of arguments to numeric-type constructor
+  api=8 type=1 insize=962 outsize=0 kw= ok=0
+Cmd: compileSnippet
+  error: 2 plat 8 at (39): 'vert': function return value missing semantics
+  api=8 type=0 insize=2791 outsize=0 kw= ok=0
+Cmd: compileSnippet
+  error: 2 plat 8 at (73): 'frag': input parameter 'i' missing semantics
+  api=8 type=1 insize=2791 outsize=0 kw= ok=0
+Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
+
+
+Quitting shader compiler process
