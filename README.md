@@ -83,3 +83,6 @@ While desigining, this game will be completely open-source (except anything that
 
 3) What software is being used?
 I use Unity, Blender, Maya, 3ds Max, Photoshop, GIMP, Krita, Mari, Corel Painter, ManicTime, MakeHuman, zBrush 4R7, ShaderMap, NDo2, Realflow, Audacity, Audition, Camtasia Studio, Visual Studio 2013, Notepad++, and a bunch more. For the most part, Blender, Unity and Photoshop take up 95% of my time. 
+
+4) Can I use your resources for my own project?
+Everything except blueprints or layouts, those are property of the US Navy or General Electric under heavy license and some files or folders will mention if they require a differnt license.
