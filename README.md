@@ -12,15 +12,16 @@ Then please <b>contact me at info@blendertek.com</b> to discuss more. <i>I don't
 4. Create a business model for <b>early access sales.</b>
 5. Repeat steps 3 & 4 for <b>Steam greenlight</b> or self-publishing.
 
-# Current Status (Feb 10, 2015)
+# Current Status (Feb 11, 2015)
 - Started a GitHub repo to allow volunteers/partners to share, discuss, and add to the project. The project was initally realized about January 10th, 2015 and a similar game was being worked on as a hobby by myself since early-to-mid 2014, thus I have some code already available and ready to adapt.
 - Posted all reference files and current .blends and test Unity projects including some Windows .exe builds
 - Most of the basic stuff in Unity is ready to refine. Modelling, animation & characters are current concerns.
 - Especially modelling the attack and control compartment to a decent level so that a very early alpha can be released.
 - Looking for partners (see below)
+- Started UV unwrapping some simple objects and starting some simple DIFF texture maps. 
 - If someone lives in Groton CT. The one thing I have budgeted for is for measurements, photos and drawings of the free admission museum ship.
 One Crystal Lake Road
-Groton, Connecticut 06340 
+Groton, Connecticut 06340
 
 # "I want to help!"
 We are a small team that consists of...
