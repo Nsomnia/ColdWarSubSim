@@ -14,12 +14,12 @@ Then please <b>contact me at info@blendertek.com</b> to discuss more. <i>I don't
 6. 
 
 ### Current Major Needs (In order of importance)
-- [ ] A 3D rigged model of Admiral Hyman G. Rickover
-- [ ] The Attack Center and Control Room compartment fully modelled
-- [ ] A basic exterior model
-- [x] Start coding the physics of a submarine moving through water [Code is ready for surface vessels, just needs to be tweaked for a submarine above water (the easy part) and below water (the hard part)
-- [x] Start coding a map system [Started as of Feb 6 2015, but its very very early]
-- [ ] Start a wiki
+- [ ] A 3D rigged model of Admiral Hyman G. Rickover (see issue # )
+- [ ] The Attack Center and Control Room compartment fully modelled (see issue # )
+- [ ] A basic exterior model (see issue # )
+- [x] Start coding the physics of a submarine moving through water [Code is ready for surface vessels, just needs to be tweaked for a submarine above water (the easy part) and below water (the hard part) (see issue # )
+- [x] Start coding a map system [Started as of Feb 6 2015, but its very very early] (see issue # )
+- [ ] Start a wiki (see issue # )
 
 ## Current Status (Feb 11, 2015)
 - Started a GitHub repo to allow volunteers/partners to share, discuss, and add to the project. The project was initally realized about January 10th, 2015 and a similar game was being worked on as a hobby by myself since early-to-mid 2014, thus I have some code already available and ready to adapt.
