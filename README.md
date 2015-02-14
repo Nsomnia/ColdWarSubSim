@@ -40,7 +40,7 @@ We are a small team that consists of...
 3. Navy correspondents for accuracy and realism on an unpaid basis at this point
 3. Future Partners
 
-Our current budget is near nil. Will be updated soon as the project has JUST gotten underway less than two weeks ago. We have potential small backing from a local business.
+Our current budget is near nil (see the budget page in the wiki). Will be updated soon; as the project has JUST gotten underway less than two weeks ago. We have potential small backing from a local business.
 
 However currently as of Feb 10, 2015 all work is done in one (1) of five (5) ways. 
 - 1. I scratch your back, you scratch mine: Anyone who can add in any noticeable way will have my full support in their current or future needs with any of my skills listed above.
