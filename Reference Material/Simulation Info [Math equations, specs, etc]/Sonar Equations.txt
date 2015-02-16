@@ -1,0 +1,17 @@
+4388 + (11.25 × temperature (in °F)) + (0.0182 × depth (in feet)) + salinity (in parts-per-thousand ).
+
+Sound propagation
+
+Sonar operation is affected by variations in sound speed, particularly in the vertical plane. Sound travels more slowly in fresh water than in sea water, though the difference is small. The speed is determined by the water's bulk modulus and mass density. The bulk modulus is affected by temperature, dissolved impurities (usually salinity), and pressure. The density effect is small. The speed of sound (in feet per second) is approximately:
+
+    4388 + (11.25 × temperature (in °F)) + (0.0182 × depth (in feet)) + salinity (in parts-per-thousand ).
+
+This empirically derived approximation equation is reasonably accurate for normal temperatures, concentrations of salinity and the range of most ocean depths. Ocean temperature varies with depth, but at between 30 and 100 meters there is often a marked change, called the thermocline, dividing the warmer surface water from the cold, still waters that make up the rest of the ocean. This can frustrate sonar, because a sound originating on one side of the thermocline tends to be bent, or refracted, through the thermocline. The thermocline may be present in shallower coastal waters. However, wave action will often mix the water column and eliminate the thermocline. Water pressure also affects sound propagation: higher pressure increases the sound speed, which causes the sound waves to refract away from the area of higher sound speed. The mathematical model of refraction is called Snell's law.
+
+If the sound source is deep and the conditions are right, propagation may occur in the 'deep sound channel'. This provides extremely low propagation loss to a receiver in the channel. This is because of sound trapping in the channel with no losses at the boundaries. Similar propagation can occur in the 'surface duct' under suitable conditions. However in this case there are reflection losses at the surface.
+
+In shallow water propagation is generally by repeated reflection at the surface and bottom, where considerable losses can occur.
+
+Sound propagation is affected by absorption in the water itself as well as at the surface and bottom. This absorption depends upon frequency, with several different mechanisms in sea water. Long-range sonar uses low frequencies to minimise absorption effects.
+
+The sea contains many sources of noise that interfere with the desired target echo or signature. The main noise sources are waves and shipping. The motion of the receiver through the water can also cause speed-dependent low frequency noise.

@@ -1,0 +1,119 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset0 Courier New;}{\f2\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\b\f0\fs36 The Triton Ocean SDK for Unity Pro / Windows\b0\fs22\par
+\b Sundog Software LLC\b0\par
+{\field{\*\fldinst{HYPERLINK "http://www.sundog-soft.com"}}{\fldrslt{\ul\cf1 http://www.sundog-soft.com}}}\f0\fs22\par
+Thank you for purchasing Triton for Unity! Triton brings GPGPU-powered wave simulations to Unity, with fast, realistic waves for any given wind conditions. In addition to 3D surface displacement, refraction, coastal, and reflection effects, Triton also produces foam and particle-based spray effects depending on how violent the seas are. Triton also renders ship wakes with 3D wave displacements and propeller backwash effects, as well as rotor wash and impact effects. Triton also allows decal textures to be applied to the moving water surface.  Triton uses a "Pierson-Moskowitz" wave spectrum, making it realistic enough for maritime training purposes, and is capable of representing Beaufort Scale conditions 1-9.\par
+\b Be sure to read the "Distributing your application with Triton" section below before trying a standalone build of your project.\b0\par
+\b\fs32 Tutorial Video\b0\fs22\par
+We have a Tutorial video available at {\field{\*\fldinst{HYPERLINK "http://youtu.be/zyQQYPYJ3Jg"}}{\fldrslt{\ul\cf1 http://youtu.be/zyQQYPYJ3Jg}}}\f0\fs22  if you prefer learning that way - or just read on:\par
+\b\fs32 Getting Started\fs22\par
+\b0 First, import the Triton package into  your project via the Asset Store or by using Assets / Import Package / Custom Package.\par
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Open up the Triton folder in your project view, and find the TritonPrefab (or TritonPrefab-Authenticated). Drag this into your scene.\par
+\pard\sa200\sl276\slmult1 Now, you can hit "play" and you should have an infinite ocean at sea level in your scene! But to get it looking its best, you'll want to adjust some settings:\par
+\b\fs32 Adjusting the Water\b0\fs22\par
+Click on the TritonPrefab in your scene, and you'll see various properties you may adjust.\par
+To change the level of the water, simply adjust the Y component of the TritonPrefab's position.\par
+There are several properties in the Triton Unity script component you may adjust:\par
+\i Wind Speed:\i0  The simulated wind speed, in meters per second. The more wind, the higher the waves and the more spray.\par
+\i Wind Direction: \i0 The direction of the wind, in degrees.\par
+\i Spray:\i0  Toggles particle-based spray effects.\par
+\i Resource Path:\i0  A relative path from the project or executable where the TritonResources folder may be found. Triton won't work without this.\par
+\i User Name / License Key: \i0 If you purchased Triton from the Asset Store, this will already be filled in with valid license information. Or, you may purchase a license for Triton from {\field{\*\fldinst{HYPERLINK "http://www.sundog-soft.com/"}}{\fldrslt{\ul\cf1 http://www.sundog-soft.com/}}}\f0\fs22 , and enter the user name and license key you received here to stop the pop-up dialogs reminding you to register and five minute runtime limit.\par
+\i Game Camera: \i0 Drag the camera object associated with the water here; Triton will use it to obtain the projection and modelview matrix used when rendering the water.\par
+\i Directional Light:\i0  Drag a directional light object here, which will influence the color of the water and specular highlights from the light source. Be sure that the ambient light in your Render Settings is set appropriately, as this too will be used to light the water.\par
+\i Environment Map:\i0  If you have an environmental cube map for your scene, drag it here, and it will be used for reflections on the water. If you prefer to generate your cube maps dynamically, you may use the public GenerateCubeMap() function in TritonUnity.cs from your LateUpdate() function to capture a cube map from the game camera and pass it in to Triton. Cube maps offer more accurate reflections of the environment in choppy seas, but don't offer accurate reflections of local objects. Planar reflections are better suited for that.\par
+\i Enable Planar Reflections: \i0 Toggles planar reflections of local objects in the water, such as terrain, ships, etc. Planar reflections look great in shallow conditions when the water is very reflective, but in high seas reflections become hard to see, and it might not be worth the performance overhead of the second camera required to generate the reflections. You may use planar reflections together with an environment map, or use either type of reflection independently.\par
+\i Above Water Visibility:\i0  The visibility above water, in meters. This can be used to fog the water in the distance to blend into the sky. Note, this only fogs the water, and not the rest of your scene.\par
+\i Above Water Fog Color:\i0  The color the water will blend towards as the Above Water Visibility distance is approached.\par
+\i Below Water Visibility:\i0  The visibility below water, in meters.  In addition to fogging the water surface, this will influence the transparency of the water near shorelines if coastal effects are enabled. Note, this only fogs the water, and not the rest of your scene.\par
+\i Below Water Fog Color: \i0 The color the water will blend towards as the Above Water Visibility distance is approached.\par
+\i Depth:\i0  The simulated depth of the water, in meters. At shallow depths, the water will be rendered with some transparency to let the ground underneath it show through. The depth also affects the shapes of the waves. If coastal effects are enabled, an automatically generated height map of your scene will be used to determine the depth and transparency and this setting will be ignored.\par
+\i Choppiness: \i0 How sharply-peaked the waves are. A choppiness of 0 will produce rounded waves, and a choppiness of 2.0 will be sharply peaked.\par
+\i Use Render Settings Fog\i0 : If set, the fog color and density specified in your Render Settings will be used instead of the values specified in \i Above Water Visibility\i0  and \i Above Water Fog Color\i0 . This can be useful for consistently fogging the water with the rest of your scene.\par
+\i World Units: \i0 How many meters each unit in your scene represents. This may only be changed at design time, not at run time.\par
+\i Underwater Fog Effects: \i0 If enabled, the RenderSettings fog will be set to match that of the water surface when the camera goes underwater, and any sky boxes will be replaced by the fog color as a background. The original fog and skybox settings are saved and restored once the camera goes back above water.\par
+\i Geocentric Coordinates: \i0 Enable this only in the unlikely scenario that you are using a geocentric coordinates system using a WGS84 ellipsoid Earth model with the origin at the center of the Earth.\par
+\i Y Is Up: \i0 Keep this checked if you are using the default Unity convention of "up" being along the Y axis. Uncheck only if the Z axis is up (or North, in the case of Geocentric coordinates.)\par
+\i Coastal Effects:\i0  (Windows Only) Check this to enable smooth blending of the water with your shorelines. It works by creating a height map of your scene, and increasing the transparency of the water as its depth decreases. Your terrain will need to extend below the water surface ("bathymetry data") in order for this to work properly. The effect is limited by the resolution of the height map, so it may not produce good results near sheer cliffs or pillars in the water.\par
+\i Depth Offset: \i0 This provides a nudge in the depth buffer on the ocean, allowing you to resolve z-fighting artifacts between the water and sloping terrain underneath it. This is especially useful on MacOS where coastal effects are not available. Reasonable values would be between 0 and 0.002 or so.\par
+\i Height Map Area: \i0 The area (in world units) covered by the height map generated for coastal effects. Increasing this value will result in coastal blending that stretches out further from the camera; decreasing it will increase the resolution of the height data used for blending near the camera. This value is ignored if coastal effects are off.\par
+\i Breaking Wave Amplitude: \i0 If coastal effects are on, the amplitude (in world units) of breaking waves near the shoreline.  A value of zero disables breaking waves. Breaking waves will only work well if your terrain includes realistic bathymetry data. If your bathymetry slopes off from the shoreline at more than a few degrees, waves will not break away from the shore - which is realistic behavior.\par
+\i Breaking Wave Direction: \i0 The direction of the breaking waves, which should point toward the shore. This value is ignored unless coastal effects are on and the breaking wave amplitude is greater than zero.\par
+\i Headless:\i0  If you are running Triton on a system intended to be a central server with no graphics, you may enable "headless" mode. This will cause Triton to update all of its waves, physics, and buoyancy models, but it will not spend time actually rendering the water. If you enable this option, the water will disappear - but this is what it's supposed to do!\fs32\par
+\b Buoyancy with Triton\b0\fs22\par
+Triton exposes several scripting methods for intersection and height tests with the water surface in the TritonUnity.cs (see "Collision Detection" below.) We included an example of using these methods to power the buoyancy of a simple object in the package.\par
+You'll find a "buoyancy example" object in our demo scene, which is just a scaled cube - but it works just as well with ships and other objects. It uses the public domain Buoyancy.cs script by Alex Zhdankin, slightly modified to retrieve water height values from Triton. We also added a "Sea Level Offset" parameter to it, which can be used to compensate for models that aren't centered at their center of buoyancy.\par
+For this script to work properly, you will need a collider and a RigidBody attached to your buoyant object, as well as the Buoyancy.cs script. For real models and not just a simple geometric object as in our example, you'll want to use a mesh collider with the correct mesh object specified within it. It's important that you have a realistic mass specified in your Rigidbody, and a realistic density in the buoyancy script. If the mass is too small, the object won't react properly with gravity - and if the density is too small, the object will be too bouncy in the water.\par
+You will also want to make sure that the "slices per axis" and "voxel limit" settings in the Buoyancy script are high enough to represent the complexity of your model. These settings influence how many control points are simulated on your object; too few will result in unrealistic motion. You may visualize the forces coming from these points by enabling Gizmos.\par
+\b\fs32 Ship Wakes with Triton\b0\fs22\par
+Triton can automatically displace the water surface, render spray effects, and render propeller backwash effects for any object on the water. To do so, simply drag the Triton/TritonWakeGenerator script onto any object in a scene that also contains a TritonPrefab.\par
+At a minimum, you will need to enter the Length and Beam Width properties of the Triton Wake Generator script. The length is the length of the ship or object, and the beam width is the width of the back of the ship or object, in meters.\par
+Propeller backwash effects may be toggled and their origin position tuned as well, using the "Prop Wash" and "Prop Wash Offset" properties. "LOD Distance" sets the distance at which the prop wash effect halves the number of segments in it, allowing you to see more wakes at once from a distance.\par
+"Bow Offset" can be used to generate spray particles in front of the wake generating object. Generally, this will be the distance from the object's position to the front of the object, to generate spray at the bow of a ship. At higher speeds, a bow wake will also be pushed up at this location. Its effect may be scaled with the "Bow Wave Scale" parameter and capped with "Bow Wave Max." The bow wake will be influenced by the "Draft", which is how far below the water surface the hull extends, and by the "Bow Size", which should be zero for most ships with pointy bows.\par
+if "Auto Update" is on, the velocity will be computed automatically based on the object's motion. If it's off, you'll need to keep the Velocity property updated on your own. The velocity influences the height of the wake waves and the amount of foam on them.\par
+Finally, the "Test Motion" checkbox will cause the object to rotate around the camera position. It's handy for seeing the wake effects when you don't have the motion of the object rigged up yet.\par
+\b\fs32 Collision Detection\fs22\par
+\b0 The TritonUnity script exposes two public methods you may use for collision detection with the water surface:\par
+\f1 public UnityEngine.Vector3 ClosestPointOnBounds(UnityEngine.Vector3 position)\par
+public bool Raycast (Ray ray, out RaycastHit hitInfo, float distance)\par
+\f0 These are identical method signatures to Unity's own Collider interface. They will return accurate collision points and surface normals for the ocean surface taking all of the waves and wakes into account. Triton does not include a buyoancy model for positioning your ships, but these methods will give you the data you need to power one.\par
+In addition, we expose:\par
+\f1 public float GetHeight(float x, float z)\f0\par
+which retrieves the wave height at the given x,z position, assuming that negative Y is "down".\par
+\b\fs32 Distributing your Application with Triton\b0\fs22\par
+When building your standalone executable, Unity will strip out many of Triton's native resources that it doesn't recognize, preventing Triton from working. You need to ensure your installer:\par
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Installs the TritonDLL.dll file from the Assets/Plugins folder alongside your game's executable (for 64-bit targets, install the TritonDLL.dll from Asset/Plugins/x64 instead, after renaming it.)\par
+{\pntext\f2\'B7\tab}Installs the TritonResources folder, in its entirety, from the Assets/Triton folder to the path specified in your "Resource Path" property, relative to the executable.\par
+{\pntext\f2\'B7\tab}Installs the Visual Studio 2010 SP1 runtime libraries from Microsoft.\par
+{\pntext\f2\'B7\tab}Installs the latest DirectX runtime libraries from Microsoft.\par
+\pard\sa200\sl276\slmult1\b\fs32 Coastal Effects and Ponds\b0\fs22\par
+Triton can produce shorelines and smaller bodies of water as well as open oceans.  To take advantage of this, produce your terrain such that it extends below the water surface with realistic "bathymetry" data - that is, your terrain should include the seafloor or the bottoms of the ponds in your scene.\par
+Enable the "Coastal Effects" option in the Triton Prefab object, and Triton will automatically generate a height map from your scene used to determine the water depth at each point. When shallow water is detected, the water's transparency will be increased and wave displacements will be decreased, leading to smooth water / land transitions and preventing z-fighting artifacts.\par
+The amount of transparency can be adjusted with the "below water visibility" setting. Take care not to set this too high when the camera is above water, as it may result in the water being unrealistically clear. Values of 10-20 meters generally produce good results.\par
+If your shore includes a smoothly sloping seafloor dropping off at a slope of a few degrees, try setting the "breaking wave amplitude" to a realistic wave height and the "breaking wave direction" to point toward the coast. This will result in a breaking wave effect with waves that grow, slow down, and finally spread out as the depth decreases.\par
+\b\fs32 Using Multiple Cameras\fs22\par
+\b0 If your scene contains multiple cameras, associate your primary camera with the TritonPrefab's "game camera" property. Then, pass any additional cameras to the TritonUnity.AddCamera() method. Each camera will have water rendered relative to its location, but Triton's physics update will only run once per frame.\par
+If you have multiple cameras, but only one is active at a time, you may use TritonUnity.SwitchCamera() to switch between them at runtime.\par
+\b\fs32 Rotor Wash Effects\b0\fs22\par
+The included RotorWash.cs script may be attached to any object to generate rotor wash effects from its position. Both particle effects and 3D wave displacements result from the rotor wash.\par
+Set the wind velocity in meters per second coming off the rotors, the direction the rotors are pointing (usually down, or 0, -1, 0), the diameter of the rotor in meters, and Triton will do the rest.\par
+The test scene included with the package includes an initially disabled Sphere-RotorWash object that illustrates usage.\par
+\b\fs32 Impact Effects\fs22\par
+\b0 The included Impact.cs script may be used to simulate objects hitting the water, kicking up spray and waves depending on the mass and velocity of the object. Set the diameter of the object in meters, its velocity in meters per second, its mass in kilograms, and its direction from its starting position (pointing toward the water surface.) When you're ready to trigger the effect, set the "trigger" property to true. On the next frame, the effect will be triggered, and the trigger property will be cleared to you may re-use the Impact object.\par
+The test scene included with the package includes an initially disabled Sphere-Impact object that illustrates usage.\par
+\b\fs32 Decal Textures\par
+\b0\fs22 Triton allows you to apply arbitrary textures on top of the water surface. This can be useful for effects like floating kelp, oil slicks, or whatever else you can dream up. Our package comes with a "Decal Example" game object that illustrates how to set up a decal.\par
+Basically, create a game object and attach the TritonDecal script to it. Assign a texture and a decal size to the script properties, and set the game object's position to where you want the decal located. Note, it's important that the Y position you specify is at sea level.\par
+At runtime, you may adjust the opacity of the decal texture and adjust the scale on the decal's game object without incurring a performance penalty. You can use this to provide simple animation of your decals by adjusting their opacity and size over time.\par
+Changing the base size, texture, or position will result in the underlying decal being re-created.\par
+Decals are rendered using a deferred volumetric rendering technique, in order to conform the decal to the moving water surface.\par
+\b\fs32 Triton and Transparent Effects\b0\fs22\par
+Unity's architecture only allows native plugins such as ours to render at the end of a Camera's rendering. This can lead to sorting issues with transparent objects, such as particle effects, since transparent objects should always be rendered last in the scene.\par
+The way around this limitation is to create a separate camera for transparent objects. If you assign your transparent objects to the "transparent FX" layer, you can then use culling masks and the camera depth order to keep transparent objects out of the main camera, which Triton draws over, and into another camera that draws after Triton. You'll need to ensure the "transparent camera" is kept in sync with the main camera's orientation by using the same camera controller, and that this transparency camera does not clear the color or depth buffers.\par
+An example project illustrating this technique may be found at {\field{\*\fldinst{HYPERLINK "http://media.sundog-soft.com/TritonRTTProblemTrans.zip"}}{\fldrslt{\ul\cf1 http://media.sundog-soft.com/TritonRTTProblemTrans.zip}}}\b\f0\fs22\par
+\fs32 Troubleshooting\b0\fs22\par
+If the color of the water looks wrong, check a few things:\par
+- Is the ambient light in the Render Settings set too low?\par
+- Did you forget to associate a Directional Light with Triton? If not, is that light pointing in the wrong direction?\par
+- Is something wrong with the cube map you're passing in? Try removing it, and activate the Auto Generate Cube Map property to see.\par
+- Did you turn on Use Render Settings Fog, and have too low of a fog density set in the Render Settings? Is the fog color consistent with the time of day?\par
+If you're not happy with Triton's performance, check the following:\par
+- Do you have the latest graphics drivers installed from your video card manufacturer? If Triton can't take advantage of GPGPU technologies such as CUDA and OpenCL due to outdated drivers, performance will suffer.\par
+- Is the reflection pass eating up too many resources? Try disabling planar reflections and see if that helps - you may need to customize the TritonReflection class to render only a subset of the scene to the reflection texture. If you're calling GenerateCubeMap() every frame, ask yourself if you really need to.\b\par
+\b0\i If you are seeing jitter or other anomalies near the horizon\i0 , check the following:\par
+- Is your far clipping on your camera too close? It should be at least 50 km for the horizon to look correct.\par
+- Do you have a sky box or sky dome that is too close to the camera? This could  mess up distant reflections on the water. Make sure your sky is out just inside your far clip plane.\par
+- If all else fails, the setting grid-horizon-offset in the TritonResources/Triton.config file may be used to influence the alignment of Triton's projected grid with the horizon line. Valid values would be between +- 0.002.\par
+\b\fs32 Using Triton with SilverLining\b0\fs22\par
+Sundog Software also offers the SilverLining Sky, 3D Clouds, and Weather asset for Unity (available via the Unity Asset Store.) SilverLining and Triton can work together seamlessly by using the following settings:\par
+- Use the TritonUnity.GenerateCubeMap() script function from a LateUpdate call, to dynamically create a cube map from SilverLining's skies whenever the skies change.\par
+- Associate SilverLining's SilverLiningSunLight (or SilverLiningMoonLight, depending on the time of day) light source as Triton's directional light.\par
+- If you're using fog with Triton, be sure the fog color is updated to be consistent with the time of day.\par
+- Ensure the scale on the _SilverLiningSky prefab is increased to at least 50km to ensure proper reflections on Triton's water. Make sure your camera's far clip distance is set to at least this amount as well.\par
+\b\fs32 More to Explore\b0\fs22\par
+At a scripting level, much more is possible with Triton - the entire C++ API is available via the TritonClassLibrary C# DLL. Refer to the documentation at {\field{\*\fldinst{HYPERLINK "http://www.sundog-soft.com/docs/triton/index.html"}}{\fldrslt{\ul\cf1 http://www.sundog-soft.com/docs/triton/index.html}}}\f0\fs22  to learn more about what's available.\par
+\b\fs32 Getting Support\b0\fs22\par
+Feel free to contact us at support@sundog-soft.com if you run into trouble.\par
+}
+ 

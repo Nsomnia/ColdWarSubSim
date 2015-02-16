@@ -1,0 +1,471 @@
+# Triton's configuration file - this is read at initialization time, so restart Triton
+# after making changes here.
+
+#########################################################################################
+General Settings
+#########################################################################################
+
+# Set this to yes for troubleshooting - additional error information may be sent
+# to your debugger's output window.
+enable-debug-messages = no
+
+# With this, error messages will pop up in an alert box. Useful for troubleshooting
+# installed applications in the field where you don't have a debugging environment
+enable-debug-alert-messages = no
+
+# The default resolution of the projected grid used to render the ocean geometry
+# Note, this should be an odd number to make the horizon line align with a row
+# edge. Set this higher to reduce aliasing artifacts when moving, or lower to
+# gain more performance.
+default-grid-resolution = 257
+
+# In geocentric / ECEF coordinate systems, the altitude (in meters) below which
+# we switch to a planar approximation of the local surface to avoid precision issues
+grid-planar-height = 2000
+
+# Whether the water surface is drawn as double sided. This is needed for when the
+# camera is inside wave troughs, but may cause some anomalies when the water is
+# both rough and transparent.
+grid-double-sided = yes
+
+# Adjustment to the water height when switching from ellipsoid to planar representations
+# to account for precision loss
+planar-adjust = 0
+
+# The maximum amount the projected grid is allowed to expand to allow for wave displacements
+# close to the surface. Setting this too high results in a loss of resolution and more
+# aliasing when close to the ocean surface, but setting it too low could result in the
+# ocean surface not filling the screen.
+max-allowable-displacement = 2.0
+
+# A nudge on the horizon line in screen space to avoid precision issues in the vertex programs.
+grid-horizon-offset = 0.001
+
+# Whether Triton makes a copy of your height map (set via Environment::SetHeightMap) into
+# system memory, to ensure height queries reflect coastal effects. Set to yes for accurate
+# height queries near shoreline, or no to avoid the overhead and blocking associated with
+# this copy.
+do-height-map-copy = yes
+
+# Length of vector used for intersection tests.
+intersection-vector-length = 100000.0
+
+# Length of vector used for testing whether the camera is above water.
+intersection-vector-length-above-water = 100000.0
+
+# Length of vector used for projecting the ocean grid onto a geocentric ocean surface.
+intersection-vector-length-projection = 100000.0
+
+#########################################################################################
+Settings for system compatibility
+#########################################################################################
+
+# Forces Triton to use the CPU-based FFTSS library for the FFT transforms, which
+# has no special system requirements or DLL dependencies. If you're having any trouble
+# getting Triton to work on your system, try setting this to yes as a first step, then
+# start disabling individual FFT methods to narrow down the problem.
+fft-force-cpu = no
+
+# Explicitly disable the use of CUDA 4.0 and CUFFT to conduct FFT's on NVidia systems.
+disable-cuda = no
+
+# Explicitly disable the use of Intel's Integrated Performance Primitives library to
+# conduct FFT's.
+disable-ipp = no
+
+# Explicitly disable the use of OpenCL on ATI systems running with the OpenGL renderer.
+disable-opencl = no
+
+# Explicitly disable the use of DirectX 11 Compute Shaders (AKA DirectCompute) on
+# feature level 11 hardware with the DirectX11 renderer.
+disable-compute-shader = no
+
+#########################################################################################
+Settings for the Tessendorf FFT wave model
+#########################################################################################
+
+# The dimensions of the tileable 2D array of wave points simulated. As FFT's are
+# expensive, you don't want to make this too high - and there's no point in computing
+# a grid that exceeds the resolution of the ocean's projected grid geometry in
+# screen space anyhow. Larger grid dimensions can let you create larger grid sizes
+# that reduce tiling, but we overlay some noise to hide tiling artifacts anyhow.
+# Must be a power of 2.
+fft-grid-dimension-x = 256
+fft-grid-dimension-y = 256
+
+# The size the FFT grid covers in world units. Larger values will reduce tiling,
+# but stretching out the grid such that it's below the resolution of the underlying
+# ocean geometry will interfere with your ability to render higher frequency waves.
+# With these default settings where the size matches the FFT dimensions, we have a
+# maximum resolution of 1 meter in the wave simulation. Note that many cards will not
+# support mip-mapping on floating point textures larger than 256, so artifacts may result
+# from increasing this.
+fft-grid-size-x = 256
+fft-grid-size-y = 256
+
+# If multiple GPU's are present, attempt to run FFT calculations in parallel across them
+# when using CUDA. Only enable this if you are on x64. Bandwidth seems to be the bottleneck
+# with the FFT's, so this doesn't actually help much today.
+fft-enable-multi-gpu = no
+
+# Whether to use an approximation of the sqrt() function when computing the wave heights.
+# This will gain you some performance, but at the expense of accuracy of wave heights at high
+# wind speeds (they will be a bit too small with this on.)
+fft-use-sqrt-approximation = yes
+
+# The "Phillips constant" described in Jerry Tessendorf's paper "Simulating Ocean Waves"
+# from 1999. It influences the height of the waves as a function of wind speed. We couldn't
+# find a good reference for what this should be set to from a physical standpoint, but
+# arrived at this value experimentally as a good match for the wave heights described
+# for specific wind conditions in the Beaufort scale. This value is only used with the
+# TESSENDORF wave model.
+fft-phillips-constant = 0.000003
+
+# The constant used when using the JONSWAP model. As above, this influences the wave heights.
+fft-phillips-constant-jonswap = 0.000076
+
+# The constant used when using the Pierson-Moskowitz model. As above, this influences the
+# wave hieghts.
+fft-phillips-constant-pierson-moskowitz = 0.0000081
+
+# The lowest floating point number allowed when calculating JONSWAP waves.
+fft-precision-limit = 1E-9
+
+# Toggles whether "choppy" waves are enabled for the CPU-based FFT transform.
+# Choppiness is always enabled if OpenCL, CUDA, or DirectCompute are in use.
+fft-enable-choppiness = yes
+
+# The default choppiness of the waves - that is, how pointy the wave crests are.
+# A value of zero would give you sinusoidal waves, but you don't want to set this too
+# high either - the waves will start intersecting themselves if you start setting this
+# above 3.0 or so depending on the conditions.
+fft-choppiness = 1.6
+
+# The default simulated depth of the water in meters. At large depths such as this
+# default value in meters, depth doesn't really play a role in the simulation, so it's
+# not important to set this accurately for open ocean simulations - it just needs to be
+# a big number.
+fft-depth = 100000.0
+
+# Controls the amount of Perlin noise blended with the FFT patch to avoid tiling
+fft-noise-amplitude = 0.05
+
+# The distance in meters at which noise gets blended in to the wave displacements to hide tiling
+fft-noise-distance = 500.0
+
+# The distance in meters at which we start to dampen wave displacement (but not normals and the lighting)
+# in order to avoid shimmering artifacts when rolling
+fft-displacement-damping-distance = 350.0
+
+# The lod bias to apply to the ocean texture to prevent aliasing / motion artifacts.
+fft-lod-bias = 0.8
+
+# Triggers whether the slope of the ocean at each point is computed via FFT's of their own
+# instead of being computed by the surrounding points. This yields more accurate results,
+# but at a high cost. This setting only affects the CPU-based FFT transforms; if OpenCL,
+# CUDA, or DirectCompute are in use, this setting is ignored and will always be "no".
+fft-exact-normals = no
+
+# A setting to filter out waves travelling against the wind. For waves that appear more
+# directional, increase this as low as 0.0. For waves that look totally chaotic, set this
+# as high as 1.0.
+fft-reflection-filter = 0.1
+
+# The maximum chop to apply to waves when computing height queries. Limits discontinuities
+# from overestimating the sample offset due to local choppiness.
+fft-height-max-chop = 1.0
+
+# Factor used to exaggerate or dampen swells set via SetDouglasSeaState or AddSwell.
+swell-multiplier = 1.0
+
+#########################################################################################
+Settings for geocentric coordinate systems
+#########################################################################################
+
+# The equatorial radius of the earth used for the WGS84 coordinate system
+equatorial-earth-radius-meters = 6378137.00
+
+# The polar radius of the earth used for the WGS84 coordinate system
+polar-earth-radius-meters = 6356752.3142
+
+# The mean radius of the earth used for the spherical coordinate system
+mean-earth-radius-meters = 6371009
+
+#########################################################################################
+Settings for the Gerstner wave model
+#########################################################################################
+
+# Used only with the Gerstner wave model, to fade out high-frequency waves with distance.
+grid-anti-aliasing = 1.0
+
+# The number of simultaneous waves in the Gerstner wave model. As each wave is computed
+# in the vertex program, this can't get too large. If you're after large numbers of waves,
+# use the Tessendorf wave model instead.
+# Important! If you change this setting, you must also change the MAX_WAVES definition
+# in the Gerstner shader files in the resources directory to match it.
+num-gerstner-waves = 5
+
+# The default steepness of the waves in the Gerstner wave model, which controls their "choppiness."
+gerstner-wave-steepness = 0.2
+
+# Default wavelength of the Gerstner waves
+gerstner-median-wavelength-meters = 100.0
+
+# Default amplitude of the Gerstner waves
+gerstner-median-amplitude-meters = 1.5
+
+# Default variance in the directions of the Gerstner waves
+gerstner-directional-variance-degrees = 20.0
+
+#########################################################################################
+Ocean color settings
+#########################################################################################
+
+# The RGB color of the light refracted into the water that does not reflect the sky.
+# These default settings are reasonable for deep ocean; for shallow water you may want
+# to blend in the color of the sea floor. The presence of plankton and other properties
+# can make this color specific to a location; i.e. you may want to make this more green
+# for inviting tropical waters.
+refract-color-red = 0.0
+refract-color-green = 0.2
+refract-color-blue = 0.3
+
+# The specular exponent for sun reflections in the water.
+shininess-opengl = 5.0
+shininess-directx = 80.0
+
+# The default fog color for above and below the water
+default-fog-color-above-r = 1.0
+default-fog-color-above-g = 1.0
+default-fog-color-above-b = 1.0
+default-fog-color-below-r = 0.0
+default-fog-color-below-g = 0.2
+default-fog-color-below-b = 0.3
+
+# The default visibility in meters for above and below the water
+default-visibility-above = 1000000000.0
+default-visibility-below = 100.0
+
+#########################################################################################
+Foam settings
+#########################################################################################
+
+# Controls the creation of foam on areas of the water that have high slopes. Only
+# honored in CPU-based FFT water models or with Gerstner water models; if OpenCL, CUDA,
+# or DirectCompute are in use, foam is always on.
+do-foam = yes
+
+# The size of the projected foam texture in meters. Needs to be big enough such that
+# tiling isn't obvious.
+foam-scale = 50.0
+
+# The prominence of the foam. 0 = invisible
+foam-blend = 0.7
+
+#########################################################################################
+Spray settings
+#########################################################################################
+
+# Enables spray particle effects at crests of choppy waves
+fft-enable-spray = yes
+
+# Number of spray particles maintained at any given time
+fft-max-sprays = 30000
+
+# The point at which the Jacobian of the FFT grid will spawn spray.
+# Values less than 1.0 result in more spray, greater than 1.0 in less.
+fft-spray-threshold = 1.2
+
+# The gravity force pulling the spray particles down, in meters per second squared.
+fft-spray-gravity = 9.81
+
+# The distance at which spray particles will be culled, in meters.
+fft-spray-cull-distance = 300.0
+
+# The amount of variance in spray particle directions, as a percent of the nominal velocity
+fft-spray-direction-variance = 0.4
+
+# The initial velocity of a spray particle, which is multiplied by the wind speed
+fft-spray-velocity = 1.0
+
+# The randomness in the initial velocities, as a percent of nominal velocity
+fft-spray-velocity-variance = 1.0
+
+# The distance in which the spray particle origin will lead in the wave direction, in meters.
+fft-spray-position-lead = 1.5
+
+# The randomness in spray particle positions, in meters
+fft-spray-position-variance = 1.0
+
+# The distance below the ocean surface that spray particles are centered at, in meters.
+fft-spray-origin-depth = 1.0
+
+# Controls the likelihood of an individual spray particle being spawned each frame.
+# 0 means every particle is spawned all the time, higher numbers result in lower particle
+# creation rates. Must be an integer.
+fft-spray-sparsity = 6
+
+# The size of a spray particle in meters.
+fft-spray-particle-size = 10.0
+
+# The randomness of a particle size in meters
+fft-spray-particle-size-variance = 1.5
+
+# The initial transparency of the spray particles. 0 = transparent, 1 = opaque.
+fft-spray-transparency = 1.0
+
+# Whether to force use of point sprites under OpenGL (vs. triangles). If the max point sprite
+# size isn't large enough (usually the case with NVidia), Triton will fall back to triangles
+# unless this is set to "yes". Point sprites are more efficient however.
+spray-force-point-sprites = yes
+
+# Whether particles use a purely additive blending function (ONE, ONE) as opposed to
+# a softer (ONE, ONE_MINUS_SRC) function. If you're using Triton with HDR, you'll need
+# to set this to "yes" to avoid negative color values.
+particles-pure-additive-blend = no
+
+#########################################################################################
+Ship wake settings
+#########################################################################################
+
+
+# The distance travelled, as a % of the ship length, at which a prop wash segment
+# is emitted
+wake-wave-generation-distance = 0.5
+
+# The rate of prop wash emission will be increased when a ship is on curved paths.
+# This factor controls how strong an effect this has. It multiplies the turn angle,
+# and the cosine of the result is used to modulate the generation distance.
+wake-wave-curve-generation-factor = 4.0
+
+# The time interval in seconds in which a wake emits a spray effect
+wake-spray-generation-period = 0.1
+
+# Exponent for decaying wave amplitude with wave radius
+wake-wave-decay = 0.33333
+
+# The maximum number of Kelvin wake wavelengths that may be displayed at once.
+max-wake-waves-dx9 = 5
+max-wake-waves-dx11 = 5
+max-wake-waves-opengl = 5
+
+# Whether 3D Kelvin wakes emanating from the ship are rendered. This places extra load
+# on the vertex programs, so if you don't need this, set it to "no"
+wake-kelvin-wakes = yes
+
+# The maximum number of circular waves from impacts or rotor wash that may be
+# displayed at once.
+max-circular-waves-dx9 = 5
+max-circular-waves-dx11 = 10
+max-circular-waves-opengl = 10
+
+# The maximum number of prop wash segments that may be displayed at once.
+max-prop-wash-dx9 = 25
+max-prop-wash-dx11 = 25
+max-prop-wash-opengl = 25
+
+# Whether propeller backwash trails (aka turbulent wake) behind the ship are rendered
+# This places extra load on the vertex programs, so if you don't need this,
+# set it to "no"
+wake-propeller-backwash = yes
+
+# The length, in meters, after which the turbulent wake disspates entirely
+wake-wash-length = 500
+
+# Adjusts the initial amplitude of wake waves
+wake-wave-scale = 1.0
+
+# The maximum number of spray particle systems to run at any given time
+wake-max-sprays = 100
+
+# The number of particles per spray particle system. The total number of particles
+# for wake sprays is this times wake-max-sprays.
+wake-spray-particles = 25
+
+# The average size of a spray particle
+wake-spray-particle-size = 13.0
+
+# The size variation of a spray particle (ie, 0.2 means +- 20%)
+wake-spray-size-variation = 0.2
+
+# The variation in spray particle velocity (0.2 = 20%)
+wake-spray-velocity-variation = 0.4
+
+# The variation in spray particle initial positions, in meters.
+wake-spray-position-variation = 7.0
+
+# The variation in spray direction (0.2 = 20%)
+wake-spray-direction-variation = 0.5
+
+# The time new wake waves fade in (to prevent discontinuities - in seconds.)
+wake-fade-in-time = 1.0
+
+# Transparency of wake spray particles
+wake-spray-transparency = 1.0
+
+# The minimum amplitude of a wake wave before it is discarded
+wake-wave-min-amplitude = 0.02
+
+# The maximum amplitude of a wake wave before it is clamped
+wake-wave-max-amplitude = 1.5
+
+# The minimum length of a prop wash segment
+min-prop-wash-segment-length = 10.0
+
+# Scaling factor on prop wash widths
+prop-wash-scale = 0.5
+
+# A boost in the initial elevation of new wake spray particles.
+wake-spray-elevation = 0
+
+#########################################################################################
+Rotor wash settings
+#########################################################################################
+
+# The time interval in seconds in which a wash emits a wave
+wash-wave-generation-period = 2.0
+
+# The time interval in seconds in which a wash emits a spray effect
+wash-spray-generation-period = 0.1
+
+# The diameter of the wash effect, as a multiple of the rotor diameter
+wash-size = 1.0
+
+# Parameter to allow adjustment of the wind strength at the water surface
+# from the wash, to result in larger or smaller waves from the wash
+wash-wind-scale = 2.0
+
+# The maximum wind velocity used to model waves and particle effects
+wash-max-velocity = 10.0
+
+# The particle size used for the rotor wash spray
+wash-spray-particle-size = 6.0
+
+# Transparency of the wash spray particle
+wash-spray-transparency = 0.2
+
+# Exponent for decaying wave amplitude with radius
+wash-wave-decay = 1.1111
+
+#########################################################################################
+Impact settings
+#########################################################################################
+
+# The number of particle systems generated when an Impact is triggered
+impact-num-sprays = 10
+
+# The scale applied to the impact's force based on its velocity and mass
+impact-energy-scale = 0.0000009
+
+# The upper bound on simulated impact energy (beyond this the particle systems just
+# fly apart.)
+impact-max-energy = 20
+
+# The random variation in positions of sprays from the impact
+impact-spray-position-variation = 2.0
+
+# Transparency of an impact spray particle
+impact-spray-transparency = 0.2
+
+# Exponent for decaying wave amplitude with radius
+impact-wave-decay = 0.33333

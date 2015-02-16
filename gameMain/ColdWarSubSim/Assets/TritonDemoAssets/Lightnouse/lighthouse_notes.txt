@@ -1,0 +1,14 @@
+ Ancient Lighthouse.
+
+Game ready ancient lighthouse
+
+Model combined with 103 objects, and has 6,736 polygons or 5,541 verts. 
+
+All textures in TIF file format 512x512.
+
+This lighthouse was checked in one of automatic navigation mesh building algorithms. So you NPSs can reach top floor of the lighthouse. 
+
+
+Low polygonal lighthouse, Medieval city, game, simulation, fantasy, wow, RPG, MMO, game ready, ancient, Architecture, building 
+ 
+
