@@ -1,0 +1,1 @@
+The EM Log Sword is a probe that is extended from the hull and electrically senses the water flow around it to determine the boat's speed
