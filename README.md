@@ -1,20 +1,21 @@
 # ColdWarSubSim
-A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unity is the game engine, code is mostly C# with some JavaScript.
+A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unreal Engine 4 is the game engine, code is mostly BluePrint with some C++.
 
 ## FOR ANYONE WANTING TO HELP
-_<b>CODERS NEEDED TO GET THIS PROJECT OFF THE GROUND C# OR JS</b>_
+_<b>CODERS NEEDED TO GET THIS PROJECT OFF THE GROUND C++/Blueprint WILL PAY FOR A UE4 SUBSCRIPTION AS LONG AS YOUR MAKING DECENT COMMITS TO THE GAME AND AND SPLIT OF ANY FUTURE PROFITS. Also looking for modellers/artists etc. feel free to email at info@blendertek.com</b>_
 <br>
 <br>
 Check out all the <b>reference</b> pictures and the <b>virtual tour</b> at http://www.ussnautilus.org/virtualTour/index.shtml# to see if anything looks like something you'd like to model. 
 <br>
 <br>
-If your a programmer and this intrests you, contact me also. The project is currently back in development phase until I learn to code C# better. 
+If your a programmer and this intrests you, contact me also. The project is currently in pre-alpha state until I can learn to code better, or find another coder. 
 <br>
 <br>
 Then please <b>contact me at info@blendertek.com</b> to discuss more. <i>I don't commit changes to the models daily to the repo, so the .blends may up to a week behind.</i>
 
-## Current Status (Feb 17, 2015)
-- Decided to put this project from my "commerical status" to "hobby status" project assignment because I've realized that with such a small team, I'll never get what I'd liek done in a reasonable amount of time, and my coding skills are not as good as my modelling skills, so until I learn to code better, or volunteer C# or JavaScript coders contact me with interest, updates are going to be very very slow.
+## Current Status (Feb 26, 2015)
+- Moved from Unity to Unreal Engine 4. Work re-starts this weekend. Stay tuned.
+- Using UE4 Community Ocean and Weather project as a starting point. https://forums.unrealengine.com/showthread.php?42092-Community-Project-WIP-Weather-amp-Ocean-Water-Shader/page6
 - Finish modelling the attack and control compartment to a decent level so that a very early alpha can be released.
 - Looking for partners (see below)
 - Started UV unwrapping some simple objects and starting some simple DIFF texture maps. [Feb 11 2015]
