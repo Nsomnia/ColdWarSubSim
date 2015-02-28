@@ -1,9 +1,28 @@
 # ColdWarSubSim
-A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unity is the game engine, code is mostly C# with some JavaScript and <i>possibly</i> moving to C++ and Unreal-Engine 4 in the future, as I own a copy.
+A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unreal Engine 4 is the game engine, code is mostly BluePrint with some C++.
 
 ## FOR ANYONE WANTING TO HELP
+_<b>CODERS NEEDED TO GET THIS PROJECT OFF THE GROUND C++/Blueprint WILL PAY FOR A UE4 SUBSCRIPTION AS LONG AS YOUR MAKING DECENT COMMITS TO THE GAME AND AND SPLIT OF ANY FUTURE PROFITS. Also looking for modellers/artists etc. feel free to email at info@blendertek.com</b>_
+<br>
+<br>
 Check out all the <b>reference</b> pictures and the <b>virtual tour</b> at http://www.ussnautilus.org/virtualTour/index.shtml# to see if anything looks like something you'd like to model. 
+<br>
+<br>
+If your a programmer and this intrests you, contact me also. The project is currently in pre-alpha state until I can learn to code better, or find another coder. 
+<br>
+<br>
 Then please <b>contact me at info@blendertek.com</b> to discuss more. <i>I don't commit changes to the models daily to the repo, so the .blends may up to a week behind.</i>
+
+## Current Status (Feb 26, 2015)
+- Moved from Unity to Unreal Engine 4. Work re-starts this weekend. Stay tuned.
+- Using UE4 Community Ocean and Weather project as a starting point. https://forums.unrealengine.com/showthread.php?42092-Community-Project-WIP-Weather-amp-Ocean-Water-Shader/page6
+- Finish modelling the attack and control compartment to a decent level so that a very early alpha can be released.
+- Looking for partners (see below)
+- Started UV unwrapping some simple objects and starting some simple DIFF texture maps. [Feb 11 2015]
+- Modelled and textured a mark 14 torpedo [Feb 15th 2015]
+- If someone lives in Groton CT. The one thing I have budgeted for is for measurements, photos and drawings of the free admission museum ship.
+One Crystal Lake Road
+Groton, Connecticut 06340
 
 ### Basic Goals
 1. Create a video game using the Unity game engine similar to the Silent Hunter series but based on the cold war, since World War 2 has been done over, and over again. More or less <b>emulate and update Silent Hunter 5 only post-WWII</b>.
@@ -11,26 +30,14 @@ Then please <b>contact me at info@blendertek.com</b> to discuss more. <i>I don't
 3. Polish, polish polish.
 4. Create a business model for <b>early access sales.</b>
 5. Repeat steps 3 & 4 for <b>Steam greenlight</b> or self-publishing.
-6. 
 
 ### Current Major Needs (In order of importance)
+- [ ] A competent programmer 
 - [ ] A 3D rigged model of Admiral Hyman G. Rickover (see issue # )
 - [ ] The Attack Center and Control Room compartment fully modelled (see issue # )
 - [ ] A basic exterior model (see issue # )
 - [x] Start coding the physics of a submarine moving through water [Code is ready for surface vessels, just needs to be tweaked for a submarine above water (the easy part) and below water (the hard part) (see issue # )
 - [x] Start coding a map system [Started as of Feb 6 2015, but its very very early] (see issue # )
-- [ ] Start a wiki (see issue # )
-
-## Current Status (Feb 11, 2015)
-- Started a GitHub repo to allow volunteers/partners to share, discuss, and add to the project. The project was initally realized about January 10th, 2015 and a similar game was being worked on as a hobby by myself since early-to-mid 2014, thus I have some code already available and ready to adapt.
-- Posted all reference files and current .blends and test Unity projects including some Windows .exe builds
-- Most of the basic stuff in Unity is ready to refine. Modelling, animation & characters are current concerns.
-- Especially modelling the attack and control compartment to a decent level so that a very early alpha can be released.
-- Looking for partners (see below)
-- Started UV unwrapping some simple objects and starting some simple DIFF texture maps. [Feb 11 2015]
-- If someone lives in Groton CT. The one thing I have budgeted for is for measurements, photos and drawings of the free admission museum ship.
-One Crystal Lake Road
-Groton, Connecticut 06340
 
 ## "I want to help!"
 We are a small team that consists of...
