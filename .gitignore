@@ -8,6 +8,11 @@
 ehthumbs.db
 Thumbs.db 
 
+# Unreal Engine 4 #
+/DerivedDataCache
+/Intermediate
+/Saved
+
 .blend1
 .blend2
 .blend3
