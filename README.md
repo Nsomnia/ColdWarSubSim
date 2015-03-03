@@ -1,6 +1,14 @@
 # ColdWarSubSim
 A indie game based on post WWII submarine simulation. Basically Silent Hunter 6, since UbiSoft no longer supports it, and there are no modern cold war subsims. Blender is used for model work and Unreal Engine 4 is the game engine, code is mostly BluePrint with some C++.
 
+Contact: 
+- Email - info@blendertek.com
+- Skype - blendertek 
+- Facebook - http://www.facebook.com/Blendertekpage
+- Twitter - http://www.twitter.com/Blender_Tek
+- YouTube - http://www.youtube.com/Nsomnia
+
+
 ## FOR ANYONE WANTING TO HELP
 _<b>CODERS NEEDED TO GET THIS PROJECT OFF THE GROUND C++/Blueprint WILL PAY FOR A UE4 SUBSCRIPTION AS LONG AS YOUR MAKING DECENT COMMITS TO THE GAME AND AND SPLIT OF ANY FUTURE PROFITS. Also looking for modellers/artists etc. feel free to email at info@blendertek.com</b>_
 <br>
